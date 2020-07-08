@@ -2698,6 +2698,8 @@ class customerController extends MX_Controller {
 					'ticket_id' 		=> $ticketid,
 					'request_status' 	=> $ticket_status,
 					'customer_remark' 	=> $customer_remark,
+					'admin_remark' 		=> '',
+					'request_accepted' 	=> 0,
 					'created_at' 		=> date('Y-m-d H:i:s'),
 					'modified_at' 		=> date('Y-m-d H:i:s')							
 				);
@@ -2707,6 +2709,8 @@ class customerController extends MX_Controller {
 					$updateDataArray = array(
 						'request_status' 	=> $ticket_status,
 						'customer_remark' 	=> $customer_remark,
+						'admin_remark' 		=> '',
+						'request_accepted' 	=> 0,
 						'modified_at' 		=> date('Y-m-d H:i:s')
 					);
 					$returndata 	= $this->ticket_model->updateTicketsTable('ticket_id',$ticketid,'nw_customer_request_tbl',$updateDataArray);

@@ -568,9 +568,12 @@ jQuery('#Consultantverifystep5Form').validate(
 jQuery('#Addremarkform').validate(
 	{
 	rules:{
-            admin_remark: {
+            request_accepted: {
                 required: true
-            }
+            },
+			/* admin_remark: {
+                required: true
+            } */
 	},
 });
 jQuery('#AgentAssignTicketForm').validate({

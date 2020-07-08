@@ -96,10 +96,23 @@
 							</div>
 						</div>
 						<div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
 								<div class="form-group inputBox focus">
 									<?php
-										echo form_label('Admin Remark *', 'admin_remark');
+										echo form_label('Request Accepted *', 'request_accepted');
+										$option = array(
+											'1'=>'Yes',
+											'0'=>'No',
+										);										
+										echo form_dropdown('request_accepted', $option, $selected = set_value('request_accepted',$response->request_accepted), $extra = 'class="form-control input request_accepted", id="request_accepted"');
+										echo '<div class="error-msg">' . form_error('request_accepted') . '</div>';
+									?>
+								</div>
+							</div>
+                            <div class="col-6">
+								<div class="form-group inputBox focus">
+									<?php
+										echo form_label('Admin Remark', 'admin_remark');
 										echo form_textarea(array('name' => 'admin_remark',
 											'class' => 'form-control input',
 											'value' => set_value('admin_remark', $response->admin_remark),
@@ -107,7 +120,6 @@
 											'cols' 	=> '4',
 											'rows' 	=> '4',
 										));
-										echo '<div class="error-msg">' . form_error('admin_remark') . '</div>';
 									?>
 								</div>
                             </div>

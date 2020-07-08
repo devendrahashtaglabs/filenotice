@@ -181,7 +181,6 @@
 									</p>
                                 </div>
                             </div>
-
                         </div>
 						<?php
 							$titledata  = $this->user_model->getDataBykey('nw_prefix_tbl','id',$ticket->title);
@@ -416,6 +415,7 @@
 												<th>#</th>
 												<th>Request Status</th>
 												<th>Customer Remark</th>
+												<th>Request Accepted</th>
 												<th>Admin Remark</th>
 												<th>Updated At</th>
 											</tr>
@@ -437,6 +437,11 @@
 													?>
 													</td>
 													<td><?php echo $ticketlog->customer_remark; ?></td>
+													<td>
+														<?php 
+															echo ($ticketlog->request_accepted == '1')?'Yes':'No';
+														?>
+													</td>
 													<td><?php echo $ticketlog->admin_remark; ?></td>
 													<td><?php echo date('d-m-Y H:i:s',strtotime($ticketlog->modified_at)); ?></td>
 												</tr>

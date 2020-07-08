@@ -845,18 +845,18 @@
 			buttons: [{
 				extend: 'excel',
 				exportOptions: {
-					columns: [0,1,2,3,4]
+					columns: [0,1,2,3,4,5]
 				},
 				filename: function fred() { return "Customerticketstatus" + Date.now(); },
 			},/* {
 				extend: 'pdf',
 				exportOptions: {
-					columns: [0,1,2,3,4]
+					columns: [0,1,2,3,4,5]
 				}
 			}, {
 				extend: 'csv',
 				exportOptions: {
-					columns: [0,1,2,3,4]
+					columns: [0,1,2,3,4,5]
 				},
 				filename: function fred() { return "Customerticketstatus" + Date.now(); },
 			}*/
