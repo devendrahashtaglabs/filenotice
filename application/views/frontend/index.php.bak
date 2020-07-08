@@ -1,0 +1,516 @@
+<style>
+	.slick-slide {
+		margin: 0px 20px;
+	}
+
+	.slick-slide img {
+		width: 100%;
+	}
+
+	.slick-slider
+	{
+		position: relative;
+		display: block;
+		box-sizing: border-box;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+				user-select: none;
+		-webkit-touch-callout: none;
+		-khtml-user-select: none;
+		-ms-touch-action: pan-y;
+			touch-action: pan-y;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.slick-list
+	{
+		position: relative;
+		display: block;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+	.slick-list:focus
+	{
+		outline: none;
+	}
+	.slick-list.dragging
+	{
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	.slick-slider .slick-track,
+	.slick-slider .slick-list
+	{
+		-webkit-transform: translate3d(0, 0, 0);
+		   -moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			 -o-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+	}
+
+	.slick-track
+	{
+		position: relative;
+		top: 0;
+		left: 0;
+		display: block;
+	}
+	.slick-track:before,
+	.slick-track:after
+	{
+		display: table;
+		content: '';
+	}
+	.slick-track:after
+	{
+		clear: both;
+	}
+	.slick-loading .slick-track
+	{
+		visibility: hidden;
+	}
+
+	.slick-slide
+	{
+		display: none;
+		float: left;
+		height: 100%;
+		min-height: 1px;
+	}
+	[dir='rtl'] .slick-slide
+	{
+		float: right;
+	}
+	.slick-slide img
+	{
+		display: block;
+	}
+	.slick-slide.slick-loading img
+	{
+		display: none;
+	}
+	.slick-slide.dragging img
+	{
+		pointer-events: none;
+	}
+	.slick-initialized .slick-slide
+	{
+		display: block;
+	}
+	.slick-loading .slick-slide
+	{
+		visibility: hidden;
+	}
+	.slick-vertical .slick-slide
+	{
+		display: block;
+		height: auto;
+		border: 1px solid transparent;
+	}
+	.slick-arrow.slick-hidden {
+		display: none;
+	}
+</style>
+<?php 
+	$ticketformdata = $this->session->userdata('ticketformdata');
+	if(!empty($ticketformdata)){
+		$this->session->unset_userdata('ticketformdata');
+	}
+	$currenturl = $this->uri->segments;
+		if(empty($currenturl)){
+?>
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url(<?php echo base_url().'cosmatics/frontend/images/legalv1.jpg'; ?>);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Expert Legal Solutions</h1>
+								<!-- <p><a class="btn btn-primary btn-lg" .href="#">Make An Appointment</a></p> -->
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(<?php echo base_url().'cosmatics/frontend/images/legalv2.jpg'; ?>);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Business Law</h1>
+									<!-- <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make An Appointment</a></p> -->
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(<?php echo base_url().'cosmatics/frontend/images/legalv3.jpg'; ?>);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="row">
+			   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+			   				<div class="slider-text-inner">
+			   					<h1>Defend Your Constitutional Right with Legal Help</h1>
+									<!-- <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make An Appointment</a></p> -->
+			   				</div>
+			   			</div>
+			   		</div>
+		   		</div>
+		   	</li>		   	
+		  	</ul>
+	  	</div>
+	</aside>
+	<?php } ?>
+<section id="servicebox">
+<div class="ouservicebox">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="flat-imagebox  ">
+					<div class="flat-imagebox-inner">
+						<div class="flat-imagebox-image">
+							<img src="https://filenotice.com/uploads/frontend/abouts.jpg">				
+					    </div>
+						<div class="flat-imagebox-header">
+						<h3 class="flat-imagebox-title">
+						<a href="https://www.onlinelegalindia.com/about/" target="_blank">About Us</a>	
+						</h3>
+						</div>
+						<div class="flat-imagebox-content">
+							<div class="flat-imagebox-desc">										
+								We provide with the best of services to all our clients and understand their needs and file the complaint with sincerity, thus helping them to resolve their issues, in no time.					
+							</div>									
+							<div class="flat-imagebox-button">
+								<a href="about" target="_blank">Read More</a>
+							</div>
+
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="flat-imagebox  ">
+					<div class="flat-imagebox-inner">
+						<div class="flat-imagebox-image">
+							<img src="https://filenotice.com/uploads/frontend/aimbg.jpg">				
+					    </div>
+						<div class="flat-imagebox-header">
+						<h3 class="flat-imagebox-title">
+						<a href="https://www.onlinelegalindia.com/about/" target="_blank">Our Aim</a>	
+						</h3>
+						</div>
+						<div class="flat-imagebox-content">
+							<div class="flat-imagebox-desc">										
+								We provide with the best of services to all our clients and understand their needs and file the complaint with sincerity, thus helping them to resolve their issues, in no time.					
+							</div>									
+							<div class="flat-imagebox-button">
+								<a href="about" target="_blank">Read More</a>
+							</div>
+
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="flat-imagebox  ">
+					<div class="flat-imagebox-inner">
+						<div class="flat-imagebox-image">
+							<img src="https://filenotice.com/uploads/frontend/missoins.jpg">				
+					    </div>
+						<div class="flat-imagebox-header">
+						<h3 class="flat-imagebox-title">
+						<a href="https://www.onlinelegalindia.com/about/" target="_blank">Vission & Mission</a>	
+						</h3>
+						</div>
+						<div class="flat-imagebox-content">
+							<div class="flat-imagebox-desc">										
+								We provide with the best of services to all our clients and understand their needs and file the complaint with sincerity, thus helping them to resolve their issues, in no time.					
+							</div>									
+							<div class="flat-imagebox-button">
+								<a href="about" target="_blank">Read More</a>
+							</div>
+
+							</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</section>
+<div id="fh5co-practice" class="fh5co-bg-section">
+	<div class="container">			
+		<div class="row animate-box">				
+			<div class="col-md-12 text-center fh5co-heading">
+				<h2 class="puttocenter">FileNotice: Your saviour and Consultant in tough times !</h2>
+				<p>FileNotice is a platform to offer consultancy services across various subjects to Indian Citizens who often find it difficult when they meet a problem. We have so many problems around - taxes, company issues, service matters, legal matters - that make us feel low and we are in search of a trustworthy partner who can give a helping hand - for us to find solution to the problems that can shake our world.</p>
+			</div>
+		</div>	
+		<div class="row" style="">
+			<?php
+				if($this->session->flashdata('responce_msg')!=""){
+					$message = $this->session->flashdata('responce_msg');
+					echo sprintf(ALERT_MESSAGE,$message['class'],$message['short_msg'],$message['message']);
+				}
+			?>
+		</div>	
+		<div class="row">
+			<?php 
+				if(!empty($allcategory)){
+					foreach($allcategory as $category){
+						$cat_icon 			= !empty($category->cat_icon)?$category->cat_icon:'fa fa-home';
+						$str 				= $category->name .'/'.$category->id .'/'.$category->name; 
+						$catid 				= base64_encode($str);
+						$subcatamountdata 	= $this->welcome_model->getsubcategorybyparentid($category->id);
+						if(in_array($category->id,$showparentcategory)){
+							$url 		= base_url().'create_ticket/?catid='.$catid;;
+							$class		= '';
+							$divclass	= '';
+						}else{
+							$url 		= 'javascript:void(0);';
+							$class		= 'catlink';
+							$divclass	= 'catcitydiv';
+						}
+						$derciption = '';
+						if(!empty($category->cat_description)){
+							$derciption = substr($category->cat_description, 0, 150).'....';
+						}
+						/* $usersession 	= $this->session->userdata('users');
+						if(!empty($usersession) && $usersession['user_type'] != 'customer'){
+							$url 	= 'javascript:void(0);';
+							$class	= 'catlink';
+						} */
+			?>
+				<div class="col-md-3 text-center animate-box srarea">
+				<div class="imagservice">
+						<img src="https://filenotice.com/uploads/frontend/legalv3.jpg" style="width: 100%;height: 180px;">
+					</div>					
+					<div class="services <?php echo $divclass; ?>">						
+						<a href="<?php echo $url;?>" class="<?php echo $class; ?>">
+							<span class="icon"><i class="<?php echo $cat_icon; ?>"></i></span>
+						<div class="desc">							
+							<h3><?php echo $category->name; ?></h3>							
+							<?php 
+								if(!empty($subcatamountdata)){
+									$singlesubcat 	= $subcatamountdata[0];
+									$amount 		= $singlesubcat->amount; 
+							?>
+								<div class="amount section">
+									<div class="pricesectin"><i class="fa fa-inr" aria-hidden="true"></i> <?php echo $amount; ?></div>
+									<div class="seconrtsecitin">
+										<span class="startint">Starts From</span>
+										<span class="onwardds">Onwards</span>
+									</div> 								
+								</div>
+							<?php } ?>
+
+
+							<p><?php echo $derciption; ?></p>
+						</div>
+						<?php if(!empty($class)){ ?>
+							<div class="details">
+								<h4 class="sorrytext btn btn-block btn-danger">SORRY !</h4>
+								<p>We are currently unavailable in your area. We are expanding, please check back soon.</p>
+							</div>
+						<?php } ?>
+						</a>
+					</div>				
+				</div>
+			<?php }} ?>
+		</div>
+	</div>
+</div>
+
+	
+<section id="whychooseus">
+<div class="whyus">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 class="lwtitle">Why Choose Us</h2>
+				<p>The key to our success is that we embrace collaboration and demand that our strategists, designers and project managers work closely and directly with our </p>
+				<div class="choosecontent">
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Super Fast Service</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>
+						<div class="col-md-6">
+							<h3>Professional Experts</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>On Time Service</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>
+						<div class="col-md-6">
+							<h3>Data Security</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Affordable</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>
+						<div class="col-md-6">
+							<h3>24X7 Platform</h3>
+							<p>We specialize in design-led brandcommunication and digital innovation</p>
+						</div>						
+					</div>
+				</div>
+
+
+			</div>
+			<div class="col-md-6">
+				<h2 class="lwtitle">Faq</h2>
+				<p>The key to our success is that we embrace collaboration and demand that our strategists, designers and project managers work closely and directly with our </p>
+				<div class="faqccord">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-menu-right"></span> Legal Notice and  its importance.</a>
+								</h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p>In today’s world we enter into numerous litigations with individuals/firms wherein filing of civil suit becomes imperative which we do generally file. Some individuals/firms enters into litigation straightaway while others opt for serving a notice upon opponent of giving out intention filing of a civil suit in court of competent jurisdiction. <a href="#" target="_blank">Read more.</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-menu-right"></span> What is the timeline for deciding cases by any labour court?</a>
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>All cases with the Labour Court must be decided within the time frame of 3 months. However, if the Labour Commissioner considers it important in the interests of justice or there is a change in circumstances of the case or it is expedient to do so, he may extend the time beyond 3 months with reasonable cause and specified extension of time. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Read more.</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-menu-right"></span> Can you file an online complaint under Consumer Protection Act?</a>
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>Yes, the Consumer Protection Act provides for filing an online complaint on the portal to ensure speedy disposal of cases and easy reporting of all grievances of all consumers. <a href="#" target="_blank">Read more.</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-menu-right"></span> How to defend your cheque bounce case in India?</a>
+								</h4>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>You can escape from a cheque bounce case by hiring the best cheque bounce attorneys in India online to defend your case. If you can prove that the cheque issued by you was forged, or delivered by undue influence, cheating, force or fraud you can easily escape the case. <a href="#" target="_blank">Read more.</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="counter-aprt">
+<div id="fh5co-counter" class="fh5co-counters fh5co-bg-section">
+		<div class="container">			
+			<div class="row">				
+				<div class="col-md-3 text-center animate-box">	
+					<span class="icon"><i class="icon-user"></i></span>	
+					<span class="fh5co-counter js-counter" data-from="0" data-to="<?php echo count($allcategory); ?>" data-speed="500" data-refresh-interval="1"></span>					
+					<span class="fh5co-counter-label">Category</span>	
+				</div>
+				<div class="col-md-3 text-center animate-box">	
+					<span class="icon"><i class="icon-speech-bubble"></i></span>				
+					<span class="fh5co-counter js-counter" data-from="0" data-to="23563" data-speed="5000" data-refresh-interval="50"></span>					
+					<span class="fh5co-counter-label">Cases Won</span>				
+				</div>				
+				<div class="col-md-3 text-center animate-box">				
+					<span class="icon"><i class="icon-trophy"></i></span>	
+					<span class="fh5co-counter js-counter" data-from="0" data-to="5067" data-speed="5000" 
+	data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">Awards Won</span>
+				</div>				
+				<div class="col-md-3 text-center animate-box">					
+					<span class="icon"><i class="icon-users"></i></span>					
+					<span class="fh5co-counter js-counter" data-from="0" data-to="2587" data-speed="5000" data-refresh-interval="50"></span>					
+					<span class="fh5co-counter-label">Lawyers</span>				
+				</div>
+			</div>			
+		</div>
+	</div>
+</section>
+<section id="orpartners">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="puttocenter">Our Partners</h2>
+	<div class="customer-logos slider my-5">
+		<div class="slide"><img src="<?php echo base_url().'cosmatics/frontend/images/htl.png'; ?>"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+		<div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
+	</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+	$(document).ready(function() {
+		/* $('#user_city').select2({
+			placeholder:'Select City'
+		}); */
+		//$( ".alert" ).fadeOut( "slow");
+		/* setTimeout(function() {
+			$(".alert").hide('blind', {}, 500)
+		}, 5000); */
+		
+		  $('.customer-logos').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 1500,
+			arrows: false,
+			dots: false,
+			pauseOnHover: false,
+			responsive: [{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4
+				}
+			}, {
+				breakpoint: 520,
+				settings: {
+					slidesToShow: 3
+				}
+			}]
+		});
+	});
+</script>	
+	

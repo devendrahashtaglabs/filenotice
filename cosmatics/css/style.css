@@ -1,0 +1,47 @@
+.previous,.next {
+	padding:10px;
+	cursor: pointer;
+}
+.dataTables_paginate span a{
+	padding:5px;
+	cursor: pointer;
+}
+.card-body.manage-listd .dt-buttons {
+	float: left;
+}
+.table-responsive.customizetableres{
+	display: block;
+	width: 100%;
+	overflow-x: inherit;
+}
+.card-body.manage-listd [type="search"] {
+	border: 1px solid #ccc;
+}
+.filter {
+    margin-left: -10px;
+    margin-bottom: 10px;
+}
+.dataTables_paginate span a {
+    padding: 5px;
+}
+.dataTables_paginate a {
+	padding: 5px;
+}
+@media only screen and (max-width:992px){
+.table-responsive.customizetableres{
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+}
+@media only screen and (max-width:600px){
+.card-body.settingsgenr .col-6 {
+	max-width: 100%;
+	flex: 0 0 100%;
+}
+}
+@media only screen and (max-width:480px){
+.col-lg-3.col-6.mobiledesign {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+}

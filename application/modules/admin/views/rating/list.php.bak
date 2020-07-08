@@ -1,0 +1,157 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1><?php echo $section_name;?></h1>
+                </div>
+                <div class="col-sm-6">
+                    <?php echo $breadcrumb;?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="float-left"><h3 class="card-title"><?php echo $page_title;?></h3></div>
+                    </div>
+                    <div class="card-body">
+                        <?php
+                        if($this->session->flashdata('responce_msg')!=""){
+                            $message = $this->session->flashdata('responce_msg');
+                            echo sprintf(ALERT_MESSAGE,$message['class'],$message['short_msg'],$message['message']);
+                        }
+                        ?>
+						<div class="row mb-2">
+							<div class="col-md-1 col-xs-12 filter-text">Filter : </div>
+							<div class="col-md-3 col-xs-12"><div class="FilterCustom1"></div></div>
+							<div class="col-md-3 col-xs-12"><div class="FilterCustom2"></div></div>
+							<div class="col-md-3 col-xs-12"><div class="FilterCustom3"></div></div>
+							<div class="col-md-2 col-xs-12"><div class="FilterCustom4"></div></div>
+						</div>
+						<div class="table-responsive customizetableres">
+							<table id="rating_table_id" class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th style="display:none;">Consultant Type</th>
+										<th>Consultant Detail</th>
+										<th style="display:none;">Name</th>
+										<th style="display:none;">Email</th>
+										<th style="display:none;">Phone</th>
+										<th>Category</th>
+										<th>Subcategory</th>
+										<th>State</th>
+										<th>City</th>
+										<th>Rating</th>
+										<th style="display:none;">Rating</th>
+										<th>Remark</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+										$a = 1;
+										foreach ($response['data'] as $row) {
+											$cityname	= '';
+											$catname	= '';
+											$subcatname	= '';
+											$citydata 	= $this->user_model->getCityList($row->city_id,'');
+											if(!empty($citydata)){
+												$cityname  	= $citydata->city_name;
+											}
+											$catdata 	= $this->category_model->getCategoryById($row->category_id);
+											if(!empty($catdata)){
+												$catname 	= $catdata->name;
+											}
+											$subcatdata = $this->category_model->getCategoryById($row->subcategory_id);
+											if(!empty($catdata)){
+												$subcatname = $subcatdata->name;
+											}
+									?>
+										<tr>
+											<td><?php echo $a; ?></td> 
+											<td style="display:none;"><?php echo $row->account_type; ?></td> 
+											<td><?php echo ucfirst($row->name).' <span class="badge bg-success">'. $row->account_type .'</span></br>'.$row->email.'</br>'.$row->mobile?></td>
+											<td style="display:none;"><?php echo ucfirst($row->name); ?></td> 
+											<td style="display:none;"><?php echo $row->email; ?></td> 
+											<td style="display:none;"><?php echo $row->mobile; ?></td>
+											<td><?php echo !empty($catname)?$catname:'NA';?></td>     
+											<td><?php echo !empty($subcatname)?$subcatname:'NA';?></td>     
+											<td><?php echo !empty($row->stateName)?$row->stateName:'NA';?></td>
+											<td><?php echo !empty($cityname)?$cityname:'NA';?></td>   
+											<?php 
+												$avg = $this->customer_model->get_rating($row->usersId)->average;
+											?>
+											<td>
+											   <?php 
+													if($avg > 0) { $per = $avg*100/5; } else { $per = 0; } 
+													echo '<div class="ratings">
+													<div class="empty-stars"></div>
+													<div class="full-stars" style="width:'.$per.'%"></div>
+													</div>'; ?>
+											</td>
+											<td style="display:none;"><?php echo (int)$avg; ?></td>
+											<td><a href="#my_modal" data-toggle="modal" data-user-id="<?php echo $row->user_id; ?>">View Remark</a></td>
+										</tr>
+									<?php  $a++; } ?>
+								</tbody>
+							</table>
+						</div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+<style>
+	.showremark .modal-content {
+		width: 700px;
+		margin-left: -5%;
+		height: auto;
+		margin-top: 15%;
+	}
+</style>
+<div id="my_modal" class="modal fade showremark" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<span class="remark-heading">Consultant Remark</span>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+	var $base_url = "<?php echo base_url();?>";
+	$('#my_modal').on('show.bs.modal', function(e) {
+		var userid = $(e.relatedTarget).data('user-id');
+		$.ajax({
+            method: "POST",
+            url: $base_url+'admin/rating/consultantremarkbyuserid',
+            data: {"userid":userid},
+            success:function(response){
+				if(response != ''){
+					//var obj = JSON.parse(response);
+					//console.log(response);return false;
+					$("#my_modal .modal-body").html(response);
+				}else{
+					$("#my_modal .modal-body").html('');
+				}
+            }
+        });
+	});
+</script>
